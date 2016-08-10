@@ -1,0 +1,40 @@
+#!/bin/bash
+#To use these, add this file to one of your ~/.bashrc, ~/.profile, etc.
+#eg: source ~/workspace/utils/aliases
+#If you'd like, feel free to override any of these (esp for screen resolution/other minor preferences).
+#If you wish to retain these settings, create a new alias file and source it after this one to override settings here.
+
+
+export UTILS_JTEOH=$(cd `dirname $BASH_SOURCE` && pwd -P)
+#Optional: use git -C functionality, only available in later version of git (1.8.5+).
+#Thanks to this SO post for the commands: http://stackoverflow.com/questions/5083224/git-pull-while-not-in-a-git-directory
+alias update-utils-jteoh='(cd $UTILS_JTEOH && git pull) && source $UTILS_JTEOH/aliases && echo "Update complete!"'
+#cd into utils directory
+alias utils-jteoh='cd $UTILS_JTEOH'
+
+#shorthand for find by filename, case insensitive
+alias f='find . -iname '
+#shorthand for recursive fgrep
+alias fgrepr='fgrep -r '
+#literal grep against all files in this directory, recursive
+alias findgrep="find . | fgrep "
+#grep git's ls-ed files
+alias gitgrep="git ls-files | fgrep "
+#grep git's modified files
+alias gitmodgrep="git ls-files --modified | fgrep "
+#shorthand for recursive grep
+alias grepr='grep -r '
+
+#BBT Reference, yay rhotacism!
+alias kripke="sed -e 's/[lr][lr]*/w/g' -e 's/[LR][LR]*/W/g' -e 's/ww*/w/g'"
+
+#QUACK!
+alias quack='echo QUACK QUACK'
+
+alias giphy='$UTILS_JTEOH/giphy.sh $@'
+alias giphy-gif='$UTILS_JTEOH/giphy.sh gif $@'
+alias giphy-sticker='$UTILS_JTEOH/giphy.sh sticker $@'
+alias giphy-translate='$UTILS_JTEOH/giphy.sh translate $@'
+alias gg='giphy-gif' 
+
+alias asky='$UTILS_JTEOH/asky-io.sh $@'
