@@ -38,7 +38,6 @@ parse_git_branch() {
 }
 
 export PS1="\A \u@\h \[\e[1;34m\]\w\[\e[m\] \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$"
-export PATH=$PATH:/export/content/linkedin/bin
 
 export ASKY_KEY="ezEqjmBbFqdFgbCDJ6WyNyjb/ExuIF3al68r5Lq4k3BfBBabLN3gmloI5PVxrI7aWvv2CCGawpKQ5udL54TGFw=="
 # hub is a wrapper for git, with github support                                                                                                               │·····················
