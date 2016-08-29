@@ -21,9 +21,6 @@ alias gcam="git commit -am "
 alias gd="git diff "
 alias gl="git log "
 alias gpr="git pull --rebase "
-alias grbc="git rbcreate " #my own git alias - diff against upstream
-alias grbu="git rbupdate " #my own git alias - diff against upstream
-alias grdc="git review dcommit "
 alias gs="git status "
 alias gsh="git show "
 
