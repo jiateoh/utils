@@ -7,7 +7,7 @@ export WORKSPACE="~/workspace"
 alias ws="cd $WORKSPACE"
 export HISTTIMEFORMAT='%x %X '
 alias sourcee="source ~/.bash_profile"
-
+alias ll='ls -l'
 
 #http://code-worrier.com/blog/autocomplete-git/
 if [ -f ~/.git-completion.bash ]; then
