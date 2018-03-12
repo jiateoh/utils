@@ -38,3 +38,5 @@ alias giphy-translate='$UTILS_JTEOH/giphy.sh translate $@'
 alias gg='giphy-gif' 
 
 alias asky='$UTILS_JTEOH/asky-io.sh $@'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
