@@ -30,16 +30,13 @@ alias gitka="gitk --all &"
 #http://martinfitzpatrick.name/article/add-git-branch-name-to-terminal-prompt-mac/
 
 parse_git_branch() {
-
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-
 }
 
-function prompt {
-    export PS1="\A \u@\h \[\e[1;34m\]\w\[\e[m\] \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$"
-}
+# required for thefuck to evaluate ps1 - I think experimental mode uses a subshell?
+# export -f parse_git_branch
 
-prompt
+export PS1="\A \u@\h \[\e[1;34m\]\w\[\e[m\] \[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$"
 
 export ASKY_KEY="ezEqjmBbFqdFgbCDJ6WyNyjb/ExuIF3al68r5Lq4k3BfBBabLN3gmloI5PVxrI7aWvv2CCGawpKQ5udL54TGFw=="
 # hub is a wrapper for git, with github support                                                                                                               
@@ -71,3 +68,33 @@ alias node-jet='ssh node@jet.cs.ucla.edu'
 
 # Ignite
 export IGNITE_HOME="/Users/jteoh/Code_Libraries/apache-ignite-fabric-2.3.0-bin"
+
+
+# Set sbt options for BigSummary experiments (courtesy of Shagha)
+export SBT_OPTS="-Xmx4G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss2M"
+
+export PATH="/Users/username/.pyenv:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# export THEFUCK_DEBUG=true
+# eval $(thefuck --alias --enable-experimental-instant-mode)
+eval $(thefuck --alias)
+
+source "/Users/jteoh/Code/PyExZ3/jteoh_setup.sh"
+alias pez-folder="cd ~/Code/PyExZ3"
+
+alias build-perfdebug="build/mvn -pl core package -DskipTests"
+
+
+### TMUX history preservation configs, taken from https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+
+# append history entries..
+shopt -s histappend
+
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+

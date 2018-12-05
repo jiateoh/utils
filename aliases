@@ -40,3 +40,6 @@ alias gg='giphy-gif'
 alias asky='$UTILS_JTEOH/asky-io.sh $@'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
+
+alias scai='ssh clash@scai01.cs.ucla.edu'
+alias pika='cat $UTILS_JTEOH/pika_ascii.txt'
