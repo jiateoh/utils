@@ -45,7 +45,7 @@ export ASKY_KEY="ezEqjmBbFqdFgbCDJ6WyNyjb/ExuIF3al68r5Lq4k3BfBBabLN3gmloI5PVxrI7
 
 
 alias baggins='cd ~/Code/baggins'
-
+alias perf-analysis='cd ~/Code/aas/analysis && source aliases'
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
@@ -82,10 +82,12 @@ fi
 # eval $(thefuck --alias --enable-experimental-instant-mode)
 eval $(thefuck --alias)
 
-source "/Users/jteoh/Code/PyExZ3/jteoh_setup.sh"
-alias pez-folder="cd ~/Code/PyExZ3"
+# script to define environment variables for z3 within the PyExZ3 class project.
+# source "/Users/jteoh/Code/_archived/classes/PyExZ3/jteoh_setup.sh"
 
 alias build-perfdebug="build/mvn -pl core package -DskipTests"
+alias code="cd ~/Code"
+alias up="cd .."
 
 
 ### TMUX history preservation configs, taken from https://askubuntu.com/questions/339546/how-do-i-see-the-history-of-the-commands-i-have-run-in-tmux
@@ -96,5 +98,25 @@ export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 
 # After each command, save and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# jteoh: disabled because it started getting annoying
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/jteoh/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/jteoh/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jteoh/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/jteoh/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+
+# auto-import gnureadline for bash arrow functionality etc
+export PYTHONSTARTUP=~/.startup.py

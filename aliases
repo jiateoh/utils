@@ -42,4 +42,23 @@ alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 
 alias scai='ssh clash@scai01.cs.ucla.edu'
+# alias zion='ssh plsys-jia@zion-1.cs.ucla.edu'
+# Note: deprecated now that zion-12 is no longer a master
+alias zion='ssh plsys-jia@zion-12.cs.ucla.edu'
+alias buckeye='ssh plsys-jia@buckeye.cs.ucla.edu'
+# for accessing through lion
+# deprecated for same reason as zion alias
+alias zion-proxy='ssh -J jteoh@lion.cs.ucla.edu plsys-jia@zion-12.cs.ucla.edu'
+alias buckeye-proxy='ssh -J jteoh@lion.cs.ucla.edu plsys-jia@buckeye.cs.ucla.edu'
+alias scp-proxy='scp -oProxyJump=lion.cs.ucla.edu '
+
+alias ssh-cratis='ssh -i ~/.ssh/jvvm_ec2.pem ec2-user@ec2-3-18-131-23.us-east-2.compute.amazonaws.com'
+
 alias pika='cat $UTILS_JTEOH/pika_ascii.txt'
+
+
+# archive, recursive, z=compress, e=use ssh protocol, 
+# v=verbose, h=human-readable, delete files that don't exist remotely, 
+# show progress
+alias myrsync='rsync -arzh -e ssh -h --progress --delete '
+alias dry-myrsync='myrsync --dry-run '
