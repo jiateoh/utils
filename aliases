@@ -24,6 +24,8 @@ alias gitgrep="git ls-files | fgrep "
 alias gitmodgrep="git ls-files --modified | fgrep "
 #shorthand for recursive grep
 alias grepr='grep -r '
+# shorthand for git status (note: I never use ghostscript)
+alias gs='git status'
 
 #BBT Reference, yay rhotacism!
 alias kripke="sed -e 's/[lr][lr]*/w/g' -e 's/[LR][LR]*/W/g' -e 's/ww*/w/g'"
